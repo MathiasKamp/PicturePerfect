@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PicturePerfect</string>
+    <string name="take_picture">Take picture</string>
+    <string name="image_view_of_the_taken_picture">image view of the taken picture</string>
+</resources>
