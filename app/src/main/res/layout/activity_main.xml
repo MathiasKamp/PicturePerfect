@@ -39,49 +39,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Iv_takenPicture" />
 
-    <TextView
-        android:id="@+id/Tv_DominationColor_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginEnd="178dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Tv_DominationColor_4" />
-
-    <TextView
-        android:id="@+id/Tv_DominationColor_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginEnd="178dp"
-        app:layout_constraintBottom_toTopOf="@+id/Tv_DominationColor_5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Tv_DominationColor_3" />
-
-    <TextView
-        android:id="@+id/Tv_DominationColor_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginEnd="178dp"
-        app:layout_constraintBottom_toTopOf="@+id/Tv_DominationColor_4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Tv_DominationColor_2" />
-
-    <TextView
-        android:id="@+id/Tv_DominationColor_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginEnd="178dp"
-        app:layout_constraintBottom_toTopOf="@+id/Tv_DominationColor_3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ListView
         android:id="@+id/lv_DomniantColors"
         android:layout_width="match_parent"

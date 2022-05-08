@@ -1,4 +1,4 @@
-package dk.zbc.pictureperfect.Contract;
+package dk.zbc.pictureperfect.Contracts;
 
 import android.graphics.Bitmap;
 
@@ -34,7 +34,7 @@ public interface MainActivityContract {
 
         /**
          * this method is used to pass a bitmap from MainActivity to MainActivityPresenter
-         * @param bitmap
+         * @param bitmap    : bitmap of the taken image
          */
         void doCheckPicture(Bitmap bitmap);
     }

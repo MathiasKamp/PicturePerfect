@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import dk.zbc.pictureperfect.Adapters.ColorAdapter;
-import dk.zbc.pictureperfect.Contract.MainActivityContract;
+import dk.zbc.pictureperfect.Contracts.MainActivityContract;
 import dk.zbc.pictureperfect.Models.Color;
 import dk.zbc.pictureperfect.Presenter.MainActivityPresenter;
 

@@ -1,4 +1,4 @@
-package dk.zbc.pictureperfect.Contract;
+package dk.zbc.pictureperfect.Contracts;
 
 import android.graphics.Bitmap;
 
@@ -18,20 +18,9 @@ public interface PictureHandlingContract {
         void onCheckBitMap(List<Color> topFiveColors);
     }
 
-    /**
-     * this method is used by the HandlePicture. it is used by the MainActivityPresenter to pass data.
-     */
-    interface PictureHandler{
 
-        /**
-         * this method is used to pass the provided bitmap to the HandlePicture thread.
-         * @param bitmap    : provided bitmap by MainActivity
-         */
-        void setBitMap(Bitmap bitmap);
+    interface PicturePixelHandler{
 
-        /**
-         * this method is used to start the HandlePicture Thread.
-         */
-        void runThread();
+        void onPictureAnalysed(List<Color> colorsInBitmap);
     }
 }

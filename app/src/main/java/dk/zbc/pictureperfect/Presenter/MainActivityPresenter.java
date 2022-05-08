@@ -3,10 +3,10 @@ package dk.zbc.pictureperfect.Presenter;
 import android.graphics.Bitmap;
 import java.util.List;
 
-import dk.zbc.pictureperfect.Contract.MainActivityContract;
-import dk.zbc.pictureperfect.Contract.PictureHandlingContract;
+import dk.zbc.pictureperfect.Contracts.MainActivityContract;
+import dk.zbc.pictureperfect.Contracts.PictureHandlingContract;
 import dk.zbc.pictureperfect.Models.Color;
-import dk.zbc.pictureperfect.PictureHandlingThread.HandlePicture;
+import dk.zbc.pictureperfect.PicturePixelHandler;
 
 /**
  * this method is used as the presenter for MainActivity
@@ -14,8 +14,9 @@ import dk.zbc.pictureperfect.PictureHandlingThread.HandlePicture;
 public class MainActivityPresenter implements MainActivityContract.Presenter, PictureHandlingContract.Presenter {
 
 
-    MainActivityContract.View view;
-    PictureHandlingContract.PictureHandler pictureHandler;
+    private final MainActivityContract.View view;
+    private PictureHandlingContract.PicturePixelHandler picturePixelHandler = null;
+    private Bitmap bitmapToAnalyse;
 
     /**
      * Constructor
@@ -25,7 +26,6 @@ public class MainActivityPresenter implements MainActivityContract.Presenter, Pi
     public MainActivityPresenter(MainActivityContract.View view) {
 
         this.view = view;
-        this.pictureHandler = new HandlePicture(this);
     }
 
     /**
@@ -36,9 +36,8 @@ public class MainActivityPresenter implements MainActivityContract.Presenter, Pi
     @Override
     public void doCheckPicture(Bitmap bitmap) {
 
-        pictureHandler.setBitMap(bitmap);
-
-        pictureHandler.runThread();
+        this.bitmapToAnalyse = bitmap;
+        this.picturePixelHandler = new PicturePixelHandler(bitmapToAnalyse, this);
 
     }
 
@@ -58,4 +57,6 @@ public class MainActivityPresenter implements MainActivityContract.Presenter, Pi
         }
 
     }
+
+
 }

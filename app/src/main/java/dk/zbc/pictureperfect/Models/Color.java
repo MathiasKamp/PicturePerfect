@@ -1,5 +1,7 @@
 package dk.zbc.pictureperfect.Models;
 
+import androidx.annotation.NonNull;
+
 /**
  * this class represents a argb color object.
  * with an aplha, red, green, blue and population property.
@@ -7,11 +9,29 @@ package dk.zbc.pictureperfect.Models;
 
 public class Color {
 
-    private double red;
-    private double green;
-    private double blue;
-    private double alpha;
-    private double population;
+    private int red;
+    private int green;
+    private int blue;
+    private int alpha;
+    private int population;
+
+    public int getRed() {
+        return red;
+    }
+
+    public int getGreen() {
+        return green;
+    }
+
+    public int getBlue() {
+        return blue;
+    }
+
+    public int getAlpha() {
+        return alpha;
+    }
+
+
 
 
     /**
@@ -24,7 +44,7 @@ public class Color {
      * @param population : double value of the population (amount of pixels which has this color)
      */
 
-    public Color(double red, double green, double blue, double alpha, double population){
+    public Color(int red, int green, int blue, int alpha, int population){
         this.alpha = alpha;
         this.red = red;
         this.blue = blue;
@@ -38,6 +58,7 @@ public class Color {
      *
      * @return : string value of the objects properties
      */
+    @NonNull
     @Override
     public String toString() {
         return "Color{" +
@@ -63,20 +84,25 @@ public class Color {
      * @return      : integer value -1 if this object has less population than the compared object.
      *              : 1 if this object has greater population than the compared object.
      */
-    public int compareTo(Color color){
+    public int compareTo(Color color) {
 
         int result = 0;
 
-        if (this.population < color.getPopulation()){
+        if (this.population < color.getPopulation()) {
 
             result = -1;
         }
 
-        if (this.population > color.getPopulation()){
+        if (this.population > color.getPopulation()) {
             result = 1;
         }
 
         return result;
+
     }
 
+    public String getHexadecimalCodeOfRgb(){
+
+        return String.format("#%02x%02x%02x", getRed(), getGreen() ,getBlue());
+    }
 }

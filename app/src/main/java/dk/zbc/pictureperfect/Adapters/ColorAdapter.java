@@ -40,6 +40,7 @@ public class ColorAdapter extends ArrayAdapter<Color> {
         TextView tvColorDominant = (currentItemView).findViewById(R.id.DominantColor);
 
         tvColorDominant.setText(color.toString());
+        tvColorDominant.setBackgroundColor(android.graphics.Color.parseColor(color.getHexadecimalCodeOfRgb()));
 
         return currentItemView;
     }
